@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="animations.css">
+
+    <!-- Helper functions / util can be declared anywhere but normally at the top -->
+
+    <!-- think of this like the browser just pasting the entire fetching.js file inside this script tag -->
+    
+    <!-- 
+        NOTE: can only access variables / functions declared in script from scripts declared below it
+        e.g can only access a function declared in a from script b IF script b's script tag is below script a's
+        
+            <script src="a.js"></script> // no dependencies
+            <script src="b.js"></script> // depends on a
+            // correct
+            
+            <script src="b.js"></script> // depends on a
+            <script src="a.js"></script> // no dependencies
+            // will throw error 
+    -->
+    <script src="script/fetching.js"></script>
+    <script src="script/util.js"></script>
+</head>
+<body>
+    <div class="card">
+        <div id="word-container" class="container">
+            <h1 id="shuffledWord"></h1>
+        </div>
+    
+        <div id="word-length-container" class="container">
+            <label for="word-length">Word length:</label>
+            <input type="range" min="4" max="15" value="4" name="word-length" id="word-length">  
+            <p>
+                <span>Word length:</span>
+                <span id="word-length-display">9</span>
+            </p>  
+            <button onclick="getNewWord()" id="new-word-button">New Word</button>
+        </div>
+    
+        <div id="guess-container" class="container hidden">
+            <input type="text" name="guess-input" id="guess-input">
+            <button onclick="submitGuess()">Submit guess</button>
+        </div>
+    
+        <div id="dictionary-meaning">
+            <!-- dynamic content -->
+        </div>
+    </div>
+
+
+    <!-- Code which edits the DOM goes at bottom of body -->
+    <script src="script/main.js"></script>
+</body>
+</html>

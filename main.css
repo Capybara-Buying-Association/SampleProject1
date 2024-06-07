@@ -1,0 +1,94 @@
+/* can heavily edit this in the web console and then copy changes back to css file */
+
+
+.hidden {
+    /* generally bad practice to use !important
+         but since the idea of hidden is that its a non specific class
+         that we can add to anything its display property is highly likely 
+         to be ovewritten
+    */
+    display: none !important; 
+}
+
+body {
+    margin: 20vh 20vw;
+}
+
+.card {
+    height: 60vh;
+    padding: 25px;
+    border-radius: 15px;
+
+    background-color: white;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12))
+    drop-shadow(0 3px 1px rgba(0, 0, 0, 0.14))
+    drop-shadow(0 1px 5px rgba(0, 0, 0, 0.12))
+    drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.1));
+
+
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+
+* {
+    /* padding not included in box size */
+    box-sizing: border-box;
+}
+
+
+.container {
+    margin-top: 10px;
+}
+
+/* 
+    range is not centered vertically by default
+     so we change display to flex and align-items: centre;
+     flex is a very powerful display setting for items
+     which need to be grouped together
+*/
+#word-length-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+        margin-block: 0px;
+    }
+}
+
+#word-container {
+    /* make sure if the card fills up this element doesnt shrink */
+    flex-shrink: 0;
+
+    height: 100px;
+    margin-top: 0px;
+    
+    /* vertical align h1 */
+    display: flex;
+    align-items: center;
+
+    border-radius: 15px;
+
+    h1 {
+        margin-block: 0px;
+
+        /* horizontally align h1 */
+        text-align: center;
+        width: 100%;
+    }
+}
+
+#guess-container {
+    display: flex;
+    justify-content: center;
+}
+
+#dictionary-meaning {
+    overflow-y: auto;
+}
+
+
+
+

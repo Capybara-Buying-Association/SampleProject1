@@ -1,0 +1,19 @@
+@keyframes flashFalse {
+    0% {background-color: white;}
+    25% {background-color: rgba(255, 0, 0, 0.5);}
+    100% {background-color: white;}
+}
+@keyframes transitionCorrect {
+    from {background-color: white;}
+    to {background-color: rgba(37, 182, 61, 0.5);}
+}
+
+
+.false {
+    animation: flashFalse .5s ease-out normal;
+}
+
+.correct {
+    animation: transitionCorrect .5s ease-in-out normal;
+    background-color: rgba(37, 182, 61, 0.5);
+}
