@@ -3,6 +3,20 @@ const wordContainer = document.getElementById("word-container")
 const shuffledWordP = document.getElementById("shuffledWord")
 
 
+function showAnswer() {
+    shuffledWordP.innerText = window.currentWord.word
+    document.getElementById("guess-container").classList.add("hidden")
+    document.getElementById("dictionary-meaning").innerHTML = ""
+    document.getElementById("dictionary-meaning").appendChild(constructDefinitionElement(window.currentWord))
+}
+
+
+function clearAnswer() {
+    document.getElementById("dictionary-meaning").innerHTML = ""
+    document.getElementById("guess-input").value = ""
+}
+
+
 // 2 ways to listen for events:
 //   first is declare on html element (one function per element)
 //      eg    onclick="exmaple()"
@@ -16,24 +30,9 @@ const shuffledWordP = document.getElementById("shuffledWord")
 //          can help for dynamically generated content
 
 //      TIP: use console log to check structure of data/objects/json in web console 
-
 document.getElementById('word-length').addEventListener('input', event => {
     document.getElementById('word-length-display').innerText = event.target.value
 })
-// set on page load
-document.getElementById('word-length-display').innerText = document.getElementById('word-length').value
-
-function showAnswer() {
-    shuffledWordP.innerText = window.currentWord.word
-    document.getElementById("guess-container").classList.add("hidden")
-    document.getElementById("dictionary-meaning").innerHTML = ""
-    document.getElementById("dictionary-meaning").appendChild(constructDefinitionElement(window.currentWord))
-}
-
-function clearAnswer() {
-    document.getElementById("dictionary-meaning").innerHTML = ""
-    document.getElementById("guess-input").value = ""
-}
 
 
 // can add variables to the window object for global scoped
@@ -86,4 +85,7 @@ async function submitGuess(event) {
     }
 }
 
+
+// runs on page load
 getNewWord()
+document.getElementById('word-length-display').innerText = document.getElementById('word-length').value
