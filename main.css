@@ -60,14 +60,14 @@ body {
 #word-container {
     /* make sure if the card fills up this element doesnt shrink */
     flex-shrink: 0;
-    align-items: center;
-    
     height: 100px;
     margin-top: 0px;
     
     /* vertical align h1 */
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
 
     border-radius: 15px;
 
